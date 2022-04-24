@@ -1,0 +1,147 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Red: #ea5353;
+  --Cyan: #45d3d3;
+  --Orange: #fcaf4a;
+  --Blue: #549ef2;
+  --Very-Dark-Blue: #4c4e61;
+  --Grayish-Blue: #a3a5ae;
+  --Very-Light-Gray: #fafafa;
+
+  --Font-size: 15px;
+
+  --font-family: "Poppins", sans-serif;
+
+  --font-weight-200: 200;
+  --font-weight-400: 400;
+  --font-weight-600: 600;
+}
+
+body {
+  color: var(--Grayish-Blue);
+  font-family: var(--font-family);
+}
+
+section {
+  max-width: 30rem;
+  margin: 7rem auto;
+}
+
+/****************/
+/** this is the text box */
+/****************/
+
+section .text {
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+section .text h2 {
+  font-weight: var(--font-weight-200);
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+section .text h2 span {
+  font-weight: var(--font-weight-600);
+  font-size: 2.4rem;
+  color: var(--Very-Dark-Blue);
+}
+
+section .text p {
+  max-width: 33ch;
+  margin-inline: auto;
+  font-size: 1.5rem;
+}
+
+/****************/
+/** this is the flex box */
+/****************/
+
+section .flex .box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 15px rgb(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border-top: 4px solid;
+  padding: 2.5rem;
+}
+
+section .flex .box:nth-child(1) {
+  border-color: var(--Cyan);
+}
+section .flex .box:nth-child(2) {
+  border-color: var(--Red);
+}
+section .flex .box:nth-child(3) {
+  border-color: var(--Orange);
+}
+section .flex .box:nth-child(4) {
+  border-color: var(--Blue);
+}
+
+section .flex .box h3 {
+  font-size: 2rem;
+  color: var(--Very-Dark-Blue);
+  line-height: 2;
+}
+
+section .flex .box p {
+  font-size: 1.3rem;
+  line-height: 2;
+  margin-bottom: 2rem;
+}
+
+section .flex .box img {
+  width: 4rem;
+  align-self: flex-end;
+}
+
+/* ---------------- */
+/*- this is the desktop view */
+/* ---------------- */
+
+@media (min-width: 992px) {
+  section {
+    max-width: 100rem;
+  }
+  /** this is the text box */
+  section .text :is(h2, h2 span) {
+    font-size: 3rem;
+  }
+
+  section .text p {
+    max-width: 55ch;
+  }
+  /** this is the flex box  */
+
+  section .flex {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+
+  section .flex .box:nth-child(1) {
+    grid-column: 1/2;
+    grid-row: 1/3;
+    align-self: center;
+  }
+
+  section .flex .box:nth-child(4) {
+    grid-column: 3/4;
+    grid-row: 1/3;
+    align-self: center;
+  }
+}
